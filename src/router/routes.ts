@@ -1,18 +1,15 @@
+// src/router/routes.ts
 import { RouteRecordRaw } from 'vue-router';
+import OrderPage from 'src/pages/OrderPage.vue';
+import AdvancedCartPage from 'src/pages/AdvancedCartPage.vue';
+import TsKaosLoggingPage from 'src/pages/TsKaosLoggingPage.vue';
+import TraditionalCartPage from 'src/pages/TraditionalCartPage.vue';
 
 const routes: RouteRecordRaw[] = [
-  {
-    path: '/',
-    component: () => import('layouts/MainLayout.vue'),
-    children: [{ path: '', component: () => import('pages/IndexPage.vue') }],
-  },
-
-  // Always leave this as last one,
-  // but you can also remove it
-  {
-    path: '/:catchAll(.*)*',
-    component: () => import('pages/ErrorNotFound.vue'),
-  },
+  { path: '/', component: OrderPage },
+  { path: '/advanced', component: AdvancedCartPage },
+  { path: '/ts-aspect', component: TsKaosLoggingPage },
+  { path: '/traditional', component: TraditionalCartPage },
 ];
 
 export default routes;
